@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projeto_final_bloco_01.Model;
+using System;
 
 namespace projeto_final_bloco_01
 {
@@ -12,6 +13,10 @@ namespace projeto_final_bloco_01
             int tipo = 0;
             decimal preco = 0.0M;
             int tipoProduto = 0;
+
+            ProdutoVirtual teste = new ProdutoVirtual(300.0M, 9.0M, "Ouro", "Jóia", "Colar", 20, 45);
+            teste.Visualizar();
+
 
             while (true)
             {
@@ -93,6 +98,8 @@ namespace projeto_final_bloco_01
                         KeyPress();
                         break;
                     case 6:
+
+                        //produto.MudarForeground();
                         KeyPress();
                         break;
 
