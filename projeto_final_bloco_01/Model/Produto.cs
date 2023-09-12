@@ -9,21 +9,16 @@ namespace projeto_final_bloco_01.Model
     public abstract class Produto
     {
 
-        decimal preco = 0.0M;
-        decimal peso = 0.0M;
-        string material;
-        string tipo;
-        string nome;
-        int tamanho = 0;
+        public decimal preco, peso;
+        public string nome;
+        public int numero, id;
 
-        public Produto(decimal preco, decimal peso, string material, string tipo, string nome, int tamanho)
+
+        public Produto(int id, decimal preco, string nome)
         {
+            this.id = id;
             this.preco = preco;
-            this.peso = peso;
-            this.material = material;
-            this.tipo = tipo;
             this.nome = nome;
-            this.tamanho = tamanho;
         }
 
         public decimal GetPreco()
@@ -36,33 +31,6 @@ namespace projeto_final_bloco_01.Model
             this.preco = preco;
         }
 
-        public decimal GetPeso()
-        {
-            return peso;
-        }
-        public void SetPeso(decimal peso)
-        {
-            this.preco = peso;
-        }
-        public string GetMaterial()
-        {
-            return material;
-        }
-
-        public void SetMaterial(string material)
-        {
-            this.material = material;
-        }
-
-        public string GetTipo()
-        {
-            return tipo;
-        }
-        public void SetTipo(string tipo)
-        {
-            this.tipo = tipo;
-        }
-
         public string GetNome()
         {
             return nome;
@@ -73,22 +41,34 @@ namespace projeto_final_bloco_01.Model
             this.nome = nome;
         }
 
-        public int GetTamanho()
+        public int GetNumero()
         {
-            return tamanho;
+            return numero;
         }
-        public void SetTamanho(int tamanho)
+        public void SetNumero(int numero)
+
         {
-            this.tamanho = tamanho;
+            this.numero = numero;
         }
+
+        public int GetId()
+        {
+            return id;
+        }
+
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
+
+
         public virtual void Visualizar()
         {
+            Console.WriteLine($"Id do produto: {this.id}");
             Console.WriteLine($"Nome do produto: {this.nome}.");
-            Console.WriteLine($"Tipo:^{this.tipo} .");
-            Console.WriteLine($"Material: {this.material}");
             Console.WriteLine($"Peso em gramas: {this.peso}");
-            Console.WriteLine($"Tamanho em cm: {this.tamanho}");
             Console.WriteLine($"Preço: {this.preco}");
+
         }
 
     }
